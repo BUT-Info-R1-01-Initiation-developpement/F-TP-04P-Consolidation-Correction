@@ -1,8 +1,9 @@
 package tp04.activite.c
 
 fun main() {
-    println("Entrez le nombre de personnes :")
-    val nombrePersonnes = readln().toInt()
+    val nombrePersonnes = recupereNombrePersonnes()
+
+    // Récupérer le choix du menu
     println(
         """
             Choisissez le type de menu :
@@ -33,7 +34,10 @@ fun main() {
         }
     } while (choixMenu != "1" && choixMenu != "2" && choixMenu != "3")
 
+    // Calcule du coût total du resto
     val coutTotal = prixMenu * nombrePersonnes
+
+    // Affichage de la note
     println(
         """
         Pour $nombrePersonnes personne(s), avec le $nomMenu :
@@ -41,4 +45,10 @@ fun main() {
         - Coût total : $coutTotal €
         """.trimIndent()
     )
+}
+
+fun recupereNombrePersonnes(): Int {
+    // Récupérer le nombre de personnes
+    println("Entrez le nombre de personnes :")
+    return readln().toInt()
 }
