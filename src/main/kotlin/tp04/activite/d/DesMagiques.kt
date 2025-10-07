@@ -39,6 +39,8 @@ fun afficheValeursDes(joueur: String, valeurDe1: Byte, valeurDe2: Byte) {
          - lancer dé 1 : $valeurDe1
          - lancer dé 2 : $valeurDe2
     """.trimIndent())
+    println("Appuyez sur la touche entrée pour poursuivre...")
+    readln()
 }
 
 fun determineVainqueur(
